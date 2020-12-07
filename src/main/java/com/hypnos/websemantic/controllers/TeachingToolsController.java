@@ -28,6 +28,8 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.stream.Stream;
 
 @RestController
@@ -62,10 +64,40 @@ public class TeachingToolsController {
         return w.toString();
     }
 
+    @GetMapping(value = "item/specific/days")
+    public String listSpecificItemsDays(@RequestParam(value = "days", defaultValue = "0", required = false) String days) throws ParserConfigurationException, IOException, SAXException, XPathExpressionException, TransformerException {
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        LocalDate date = LocalDate.now().minusDays(Long.parseLong(days));
+        String expression = "//tool[number(translate(date, '/', '')) > " + date.format(DateTimeFormatter.ofPattern("yyyyMMdd")) + "]";
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(xmlFile);
+        NodeList node = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
+
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        StreamSource stylesource = new StreamSource(itemsXls);
+        Transformer transformer = tFactory.newTransformer(stylesource);
+
+        DocumentBuilderFactory dbf =
+                DocumentBuilderFactory.newInstance();
+        DocumentBuilder builderr = dbf.newDocumentBuilder();
+        Document doc = builderr.newDocument();
+        Element element = doc.createElement("tools_list");
+        doc.appendChild(element);
+        for (int i = 0; i < node.getLength(); ++i) {
+            element.insertBefore(doc.adoptNode(node.item(i).cloneNode(true)), element.getLastChild());
+        }
+
+        DOMSource source = new DOMSource(doc);
+        StringWriter w = new StringWriter();
+        StreamResult result = new StreamResult(w);
+        transformer.transform(source, result);
+        w.flush();
+        return w.toString();
+    }
+
     @GetMapping(value = "item/specific")
-    public String listSpecificItems(
-            @RequestParam(value = "xDays", defaultValue = "0", required = false) Integer xDays,
-            @RequestParam(value = "category", required = false) String category
+    public String listSpecificItems(@RequestParam(value = "category", defaultValue = "Engineering", required = false) String category
     ) throws TransformerException, ParserConfigurationException, XPathExpressionException, IOException, SAXException {
         XPath xPath = XPathFactory.newInstance().newXPath();
         String expression = null;
@@ -92,12 +124,6 @@ public class TeachingToolsController {
         for (int i = 0; i < node.getLength(); ++i) {
             element.insertBefore(doc.adoptNode(node.item(i).cloneNode(true)), element.getLastChild());
         }
-        Transformer tf =
-                TransformerFactory.newInstance().newTransformer();
-        tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-        tf.setOutputProperty(OutputKeys.INDENT, "yes");
-        Writer out = new StringWriter();
-        tf.transform(new DOMSource(doc), new StreamResult(out));
 
         DOMSource source = new DOMSource(doc);
         StringWriter w = new StringWriter();
@@ -189,6 +215,10 @@ public class TeachingToolsController {
         Element img = doc.createElement("img");
         img.insertBefore(doc.createTextNode(item.img != null ? item.img : ""), img.getLastChild());
         toolElement.insertBefore(img, toolElement.getLastChild());
+
+        Element date = doc.createElement("date");
+        date.insertBefore(doc.createTextNode(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")).toString()), date.getLastChild());
+        toolElement.insertBefore(date, toolElement.getLastChild());
 
         Transformer tf =
                 TransformerFactory.newInstance().newTransformer();
