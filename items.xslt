@@ -5,6 +5,7 @@
         <html>
             <head>
                 <title>Top Tools During Covid</title>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
                 <style>
                     body {
                     background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
@@ -111,10 +112,45 @@
                     color: #444;
                     text-shadow: 0 1px 0 #fff;
                     }
+
+                    .search {
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                    }
+                    .searchTerm {
+                    width: 10%;
+                    border: 3px solid #00B4CC;
+                    border-right: none;
+                    padding: 5px;
+                    height: 36px;
+                    border-radius: 5px 0 0 5px;
+                    outline: none;
+                    color: #9DBFAF;
+                    }
+                    .searchButton {
+                    width: 40px;
+                    height: 36px;
+                    border: 1px solid #00B4CC;
+                    background: #00B4CC;
+                    text-align: center;
+                    color: #fff;
+                    border-radius: 0 5px 5px 0;
+                    cursor: pointer;
+                    font-size: 20px;
+                    }
+
                 </style>
             </head>
             <body>
-                <h1>Top Tools for Learning and Teaching 2020</h1>
+                <h2>Top Tools for Learning and Teaching 2020</h2>
+
+                <form class="search" method="get" action="item/specific">
+                    <input type="text" class="searchTerm" name="category" placeholder="Category"></input>
+                    <button class="searchButton" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
 
                 <table cellpadding="0" cellspacing="0" border="0">
                     <div class="tbl-header">
@@ -268,151 +304,6 @@
                         </xsl:for-each>
                     </div>
                 </table>
-                <h2>Top Tools for Learning and Teaching 2020</h2>
-                <form method="get" action="item/specific">
-                    <input type="text" name="category">categorie</input>
-                    <button type="submit">SUBMIT</button>
-                </form>
-                <table border="1">
-                    <tr bgcolor="#9acd32">
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Link</th>
-                        <th>Style</th>
-                        <th>Category</th>
-                        <th>Web Based?</th>
-                        <th>Price</th>
-                        <th>Subjects</th>
-                        <th>Creator</th>
-                    </tr>
-                    <xsl:for-each select="tools_list/tool">
-                        <xsl:if test="style = 'Learning'">
-                            <tr bgcolor="green">
-                                <td>
-                                    <xsl:value-of select="name"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="description"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="link"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="style"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="category"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="web_based"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="price"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="subjects"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="creator"/>
-                                </td>
-                            </tr>
-                        </xsl:if>
-                        <xsl:if test="style = 'Teaching'">
-                            <tr bgcolor="yellow">
-                                <td>
-                                    <xsl:value-of select="name"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="description"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="link"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="style"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="category"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="web_based"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="price"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="subjects"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="creator"/>
-                                </td>
-                            </tr>
-                        </xsl:if>
-                        <xsl:if test="style = 'Structure'">
-                            <tr bgcolor="lightblue">
-                                <td>
-                                    <xsl:value-of select="name"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="description"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="link"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="style"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="category"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="web_based"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="price"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="subjects"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="creator"/>
-                                </td>
-                            </tr>
-                        </xsl:if>
-                        <xsl:if test="style = 'Joint'">
-                            <tr bgcolor="white">
-                                <td>
-                                    <xsl:value-of select="name"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="description"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="link"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="style"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="category"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="web_based"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="price"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="subjects"/>
-                                </td>
-                                <td>
-                                    <xsl:value-of select="creator"/>
-                                </td>
-                            </tr>
-                        </xsl:if>
-                    </xsl:for-each>
-                </table>
-
             </body>
         </html>
     </xsl:template>
