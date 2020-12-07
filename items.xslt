@@ -18,35 +18,70 @@
                         <th>Creator</th>
                     </tr>
                     <xsl:for-each select="tools_list/tool">
-                        <tr>
-                            <td>
-                                <xsl:value-of select="name"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="description"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="link"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="style"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="category"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="web_based"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="price"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="subjects"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="creator"/>
-                            </td>
-                        </tr>
+                        <xsl:if test="style = 'Learning'">
+                            <tr bgcolor="green">
+                                <td>
+                                    <xsl:value-of select="name"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="description"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="link"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="style"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="category"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="web_based"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="price"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="subjects"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="creator"/>
+                                </td>
+                            </tr>
+                        </xsl:if>
+                    </xsl:for-each>
+                    <xsl:for-each select="tools_list/tool">
+                        <xsl:if test="style = 'Teaching'">
+                            <tr bgcolor="yellow">
+                                <td>
+                                    <xsl:value-of select="name"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="description"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="link"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="style"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="category"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="web_based"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="price"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="subjects"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="creator"/>
+                                </td>
+                            </tr>
+                        </xsl:if>
                     </xsl:for-each>
                 </table>
             </body>
