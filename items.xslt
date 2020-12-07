@@ -5,6 +5,10 @@
         <html>
             <body>
                 <h2>Top Tools for Learning and Teaching 2020</h2>
+                <form method="get" action="item/specific">
+                    <input type="text" name="category">categorie</input>
+                    <button type="submit">SUBMIT</button>
+                </form>
                 <table border="1">
                     <tr bgcolor="#9acd32">
                         <th>Name</th>
