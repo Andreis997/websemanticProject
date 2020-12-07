@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <tools_list>
-    <tool>
+    <tool id="123">
         <id>youtube</id>
         <name>Youtube</name>
         <description>An online video-sharing platform.</description>
@@ -15,7 +15,7 @@
         <creator>Google</creator>
         <img>href://url/img</img>
     </tool>
-    <tool>
+    <tool id="234">
         <id>gmail</id>
         <name>Gmail</name>
         <description>A free email service.</description>
@@ -31,7 +31,7 @@
         </subjects>
         <creator>Google</creator>
     </tool>
-    <tool>
+    <tool id="345">
         <id>zoom</id>
         <name>Zoom</name>
         <description>A modern cloud platform for video and audio conferencing and chat</description>
@@ -45,7 +45,7 @@
         </subjects>
         <creator>Zoom Video Communications</creator>
     </tool>
-    <tool>
+    <tool id="456">
         <id>msteams</id>
         <name>Microsoft Teams</name>
         <description>A hub for team collaboration in Microsoft 365</description>
@@ -59,7 +59,7 @@
         </subjects>
         <creator>Microsoft</creator>
     </tool>
-    <tool>
+    <tool id="567">
         <id>office365</id>
         <name>Office 365</name>
         <description>Free online versions of Microsoft Word, Powerpoint, Excel and OneNote</description>
@@ -73,7 +73,7 @@
         </subjects>
         <creator>Microsoft</creator>
     </tool>
-    <tool>
+    <tool id="678">
         <id>slack</id>
         <name>Slack</name>
         <description>Chat rooms for any professional environment</description>
@@ -90,7 +90,7 @@
         </subjects>
         <creator>Slack Corporation</creator>
     </tool>
-    <tool>
+    <tool id="789">
         <id>adbspark</id>
         <name>Adobe Spark</name>
         <description>A suite of media creation applications to turn ideas into stories</description>
@@ -104,7 +104,7 @@
         </subjects>
         <creator>Adobe</creator>
     </tool>
-    <tool>
+    <tool id="890">
         <id>kahoot</id>
         <name>Kahoot!</name>
         <description>A multiple choice quiz platform for quick tests and fun</description>
@@ -118,7 +118,7 @@
         </subjects>
         <creator>Kahoot</creator>
     </tool>
-    <tool>
+    <tool id="012">
         <id>gsearch</id>
         <name>Google Search</name>
         <description>The internet's go-to method of searching for information</description>
@@ -132,7 +132,7 @@
         </subjects>
         <creator>Google</creator>
     </tool>
-    <tool>
+    <tool id="112">
         <id>trello</id>
         <name>Trello</name>
         <description>A hub for teams to work together on tasks</description>
@@ -146,7 +146,7 @@
         </subjects>
         <creator>Atlassian</creator>
     </tool>
-    <tool>
+    <tool id="113">
         <id>whatsapp</id>
         <name>Whatsapp</name>
         <description>The most popular internet messaging service</description>
@@ -160,7 +160,7 @@
         </subjects>
         <creator>Whatsapp</creator>
     </tool>
-    <tool>
+    <tool id="114">
         <id>wikipedia</id>
         <name>Wikipedia</name>
         <description>The internet's free encyclopedia</description>
@@ -174,7 +174,7 @@
         </subjects>
         <creator>Wikimedia Foundation</creator>
     </tool>
-    <tool>
+    <tool id="115">
         <id>gmeets</id>
         <name>Google Meet</name>
         <description>The new Google Hangouts for video conferencing</description>
@@ -188,7 +188,7 @@
         </subjects>
         <creator>Wikimedia Foundation</creator>
     </tool>
-    <tool>
+    <tool id="116">
         <id>ted</id>
         <name>TED Talks</name>
         <description>Educational videos on various topics</description>
@@ -206,7 +206,7 @@
         </subjects>
         <creator>TED Conferences LLC</creator>
     </tool>
-    <tool>
+    <tool id="171">
         <id>pinterest</id>
         <name>Pinterest</name>
         <description>An image sharing platform for various curational purposes</description>
@@ -220,7 +220,7 @@
         </subjects>
         <creator>Pinterest</creator>
     </tool>
-    <tool>
+    <tool id="118">
         <id>gclass</id>
         <name>Google Classroom</name>
         <description>A web service to facilitate file sharing between teachers and students</description>
@@ -234,7 +234,7 @@
         </subjects>
         <creator>Google</creator>
     </tool>
-    <tool>
+    <tool id="117">
         <id>discord</id>
         <name>Discord</name>
         <description>Voice call platform with slack-like features</description>
@@ -248,7 +248,7 @@
         </subjects>
         <creator>Discord</creator>
     </tool>
-    <tool>
+    <tool id="119">
         <id>gservices</id>
         <name>Google Cloud Services</name>
         <description>Services that include Google's tools that can be accessed with in-cloud storage, but we're focusing
@@ -264,8 +264,7 @@
         </subjects>
         <creator>Google</creator>
     </tool>
-    <tool>
-        <id>moodle</id>
+    <tool id="121">
         <name>Moodle</name>
         <description>Open source learning management system</description>
         <link>moodle.org</link>
@@ -278,8 +277,7 @@
         </subjects>
         <creator>Moodle HQ</creator>
     </tool>
-    <tool>
-        <id>mentimeter</id>
+    <tool id="122">
         <name>Mentimeter</name>
         <description>Create presentations with real-time feedback</description>
         <link>mentimeter.com</link>
@@ -292,8 +290,7 @@
         </subjects>
         <creator>Johnny Warstrom</creator>
     </tool>
-    <tool>
-        <id>khanacdm</id>
+    <tool id="123">
         <name>Khan Academy</name>
         <description>A collection of short lessons in video format</description>
         <link>khanacademy.org</link>
@@ -306,8 +303,7 @@
         </subjects>
         <creator>Sal Khan</creator>
     </tool>
-    <tool>
-        <id>miro</id>
+    <tool id="124">
         <name>Miro</name>
         <description>Visual Collaboration online tool</description>
         <link>miro.com</link>
