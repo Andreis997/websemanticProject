@@ -49,10 +49,70 @@
                                 </td>
                             </tr>
                         </xsl:if>
-                    </xsl:for-each>
-                    <xsl:for-each select="tools_list/tool">
                         <xsl:if test="style = 'Teaching'">
                             <tr bgcolor="yellow">
+                                <td>
+                                    <xsl:value-of select="name"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="description"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="link"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="style"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="category"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="web_based"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="price"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="subjects"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="creator"/>
+                                </td>
+                            </tr>
+                        </xsl:if>
+                        <xsl:if test="style = 'Structure'">
+                            <tr bgcolor="lightblue">
+                                <td>
+                                    <xsl:value-of select="name"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="description"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="link"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="style"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="category"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="web_based"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="price"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="subjects"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="creator"/>
+                                </td>
+                            </tr>
+                        </xsl:if>
+                        <xsl:if test="style = 'Joint'">
+                            <tr bgcolor="white">
                                 <td>
                                     <xsl:value-of select="name"/>
                                 </td>
