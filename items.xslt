@@ -5,7 +5,8 @@
         <html>
             <head>
                 <title>Top Tools During Covid</title>
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+                <link rel="stylesheet"
+                      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
@@ -13,9 +14,17 @@
                     background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
                     font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
                     text-shadow: 0 1px 0 #fff;
+
+                    padding: 0;
+                    margin: 0;
+                    font-family: 'Roboto ', sans-serif;
+                    font-size: 14px;
+                    color: #212121;
+                    line-height: 1.4;
+                    background-color: #F9F9F9;
                     }
 
-                    h2 {
+                    h1 {
                     font-family: 'Montserrat', sans-serif;
                     }
 
@@ -119,6 +128,9 @@
                     text-shadow: 0 1px 0 #fff;
                     }
 
+                    form{
+                    float: right;
+                    }
                     .search {
                     width: 100%;
                     position: relative;
@@ -145,21 +157,119 @@
                     cursor: pointer;
                     font-size: 20px;
                     }
+                    body {
+                    padding: 0;
+                    margin: 0;
+                    font-family: 'Roboto ', sans-serif;
+                    font-size: 14px;
+                    color: #212121;
+                    line-height: 1.4;
+                    background-color: #F9F9F9;
+                    }
+
+                    .container {
+                    margin: 0 auto;
+                    }
+
+                    /* navbar */
+                    nav {
+                    padding: 20px 0;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    height: auto;
+                    background-color: #2196F3;
+                    }
+
+                    .logo,
+                    .nav {
+                    display: inline-block;
+                    margin: 0;
+                    }
+
+                    /* nav links */
+                    .nav {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    }
+
+                    .nav li {
+                    display: inline-block;
+                    margin-left: 40px;
+                    }
+
+                    nav a {
+                    color: #FFF;
+                    text-decoration: none;
+                    }
+
+                    nav a:hover {
+                    color: #DDD;
+                    }
+
+                    .nav-right {
+                    float: right;
+                    line-height: 39px;
+                    }
+
+                    @media screen and (max-width: 677px) {
+                    .container {
+                    width: 80%;
+                    }
+                    }
+
+                    @media screen and (max-width: 767px) {
+                    .container {
+                    width: 90%;
+                    }
+                    }
+
+                    @media screen and (min-width: 768px) {
+                    .container {
+                    width: 750px;
+                    }
+                    }
+
+                    @media screen and (min-width: 992px) {
+                    .container {
+                    width: 960px;
+                    }
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                    .container {
+                    width: 1170px;
+                    }
+                    }
+
 
                 </style>
             </head>
             <body>
-                <h2>Top Tools for Learning and Teaching 2020</h2>
+                <nav>
+                    <div class="container">
+                        <h1 class="logo">
+                            <a href="#">Top Tools 2020</a>
+                        </h1>
 
-                <form class="search" method="get" action="http://localhost:8080/item/specific">
-                    <input type="text" class="searchTerm" name="category" placeholder="Category"></input>
-                    <button class="searchButton" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
+                        <ul class="nav nav-right">
+                            <li>
+                                <a href="http://localhost:8080/item/specific">Engineering Link</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:8080/item/add">Add item</a>
+                            </li>
+                        </ul>
+                        <form class="search" method="get" action="http://localhost:8080/item/specific">
+                            <input type="text" class="searchTerm" name="category" placeholder="Category"></input>
+                            <button class="searchButton" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
 
-                <a href="http://localhost:8080/item/specific">Enginering Link</a>
-                <a href="http://localhost:8080/item/add">Add item</a>
+                </nav>
+
 
                 <table cellpadding="0" cellspacing="0" border="0">
                     <div class="tbl-header">

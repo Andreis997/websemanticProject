@@ -13,6 +13,14 @@
                     background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
                     font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
                     text-shadow: 0 1px 0 #fff;
+
+                    padding: 0;
+                    margin: 0;
+                    font-family: 'Roboto ', sans-serif;
+                    font-size: 14px;
+                    color: #212121;
+                    line-height: 1.4;
+                    background-color: #F9F9F9;
                     }
 
                     h2 {
@@ -144,6 +152,81 @@
                     border-radius: 0 5px 5px 0;
                     cursor: pointer;
                     font-size: 20px;
+                    }
+
+                    .container {
+                    margin: 0 auto;
+                    }
+
+                    /* navbar */
+                    nav {
+                    padding: 20px 0;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    height: auto;
+                    background-color: #2196F3;
+                    }
+
+                    .logo,
+                    .nav {
+                    display: inline-block;
+                    margin: 0;
+                    }
+
+                    /* nav links */
+                    .nav {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    }
+
+                    .nav li {
+                    display: inline-block;
+                    margin-left: 40px;
+                    }
+
+                    nav a {
+                    color: #FFF;
+                    text-decoration: none;
+                    }
+
+                    nav a:hover {
+                    color: #DDD;
+                    }
+
+                    .nav-right {
+                    float: right;
+                    line-height: 39px;
+                    }
+
+                    @media screen and (max-width: 677px) {
+                    .container {
+                    width: 80%;
+                    }
+                    }
+
+                    @media screen and (max-width: 767px) {
+                    .container {
+                    width: 90%;
+                    }
+                    }
+
+                    @media screen and (min-width: 768px) {
+                    .container {
+                    width: 750px;
+                    }
+                    }
+
+                    @media screen and (min-width: 992px) {
+                    .container {
+                    width: 960px;
+                    }
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                    .container {
+                    width: 1170px;
+                    }
                     }
 
                 </style>
