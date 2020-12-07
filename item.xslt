@@ -8,7 +8,6 @@
                 <table border="1">
                     <tr bgcolor="#9acd32">
                         <th>Name</th>
-                        <th>Description</th>
                         <th>Link</th>
                         <th>Style</th>
                         <th>Category</th>
@@ -16,13 +15,11 @@
                         <th>Price</th>
                         <th>Subjects</th>
                         <th>Creator</th>
+                        <th>Description</th>
                     </tr>
                     <tr>
                         <td>
                             <xsl:value-of select="tool/name"/>
-                        </td>
-                        <td>
-                            <xsl:value-of select="tool/description"/>
                         </td>
                         <td>
                             <xsl:value-of select="tool/link"/>
@@ -45,8 +42,15 @@
                         <td>
                             <xsl:value-of select="tool/creator"/>
                         </td>
+                        <td>
+                            <xsl:value-of select="tool/description"/>
+                        </td>
                     </tr>
                 </table>
+
+                <script>
+
+                </script>
             </body>
         </html>
     </xsl:template>

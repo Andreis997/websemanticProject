@@ -48,7 +48,7 @@
     <tool id="456">
         <name>Microsoft Teams</name>
         <description>A hub for team collaboration in Microsoft 365</description>
-        <link>https://www.microsoft.com/en-ca/microsoft-365/microsoft-teams</link>
+        <link>teams.microsoft.com</link>
         <style>Teaching</style>
         <category>Collab</category>
         <web_based>Not Web-Based</web_based>
