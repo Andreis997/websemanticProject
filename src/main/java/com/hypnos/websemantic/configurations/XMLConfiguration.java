@@ -14,6 +14,7 @@ public class XMLConfiguration {
 
     public static String XML_FILE = "records.xml";
     public static String XLS_LIST = "items.xslt";
+    public static String XLS_ITEM = "item.xslt";
 
     @Bean
     public DataSource dataSource() throws JAXBException {
@@ -33,6 +34,11 @@ public class XMLConfiguration {
     @Bean
     public File itemsXls() {
         return new File(XLS_LIST);
+    }
+
+    @Bean
+    public File itemXls() {
+        return new File(XLS_ITEM);
     }
 
 }
