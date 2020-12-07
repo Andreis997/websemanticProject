@@ -1,26 +1,32 @@
 package com.hypnos.websemantic.controllers;
 
+import com.hypnos.websemantic.models.DataSource;
 import com.hypnos.websemantic.models.Item;
+import com.hypnos.websemantic.services.DataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 @RestController
 public class TeachingToolsController {
@@ -29,6 +35,9 @@ public class TeachingToolsController {
 
     @Autowired
     private File itemsXls;
+
+    @Autowired
+    private DataSourceService dataSourceService;
 
     @GetMapping("/list")
     public String listItems() throws ParserConfigurationException, IOException, SAXException, TransformerException {
@@ -61,7 +70,91 @@ public class TeachingToolsController {
     }
 
     @PostMapping("/item/add")
-    public String addItem(@ModelAttribute Item item) {
-        return "";
+    public String addItemPost(@ModelAttribute Item item) throws IOException, SAXException, ParserConfigurationException, TransformerException {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        Document doc = documentBuilder.parse(xmlFile);
+
+        Element root = doc.getDocumentElement();
+        Element toolElement = doc.createElement("tool");
+        root.appendChild(toolElement);
+
+        Element name = doc.createElement("name");
+        name.insertBefore(doc.createTextNode(item.name), name.getLastChild());
+        toolElement.insertBefore(name, toolElement.getLastChild());
+
+        Element description = doc.createElement("description");
+        description.insertBefore(doc.createTextNode(item.description), description.getLastChild());
+        toolElement.insertBefore(description, toolElement.getLastChild());
+
+        Element link = doc.createElement("link");
+        link.insertBefore(doc.createTextNode(item.link), link.getLastChild());
+        toolElement.insertBefore(link, toolElement.getLastChild());
+
+        Element style = doc.createElement("style");
+        style.insertBefore(doc.createTextNode(item.style), style.getLastChild());
+        toolElement.insertBefore(style, toolElement.getLastChild());
+
+        Element category = doc.createElement("category");
+        category.insertBefore(doc.createTextNode(item.category), category.getLastChild());
+        toolElement.insertBefore(category, toolElement.getLastChild());
+
+        Element web_based = doc.createElement("web_based");
+        web_based.insertBefore(doc.createTextNode(item.web_based), web_based.getLastChild());
+        toolElement.insertBefore(web_based, toolElement.getLastChild());
+
+        Element price = doc.createElement("price");
+        price.insertBefore(doc.createTextNode(item.price), price.getLastChild());
+        toolElement.insertBefore(price, toolElement.getLastChild());
+
+
+        Element subjects = doc.createElement("subjects");
+        for (String s : item.subjects.split(",")){
+            Element subject = doc.createElement("subject");
+            subject.insertBefore(doc.createTextNode(s), subject.getLastChild());
+            subjects.insertBefore(subject, subjects.getLastChild());
+        }
+
+        toolElement.insertBefore(subjects, toolElement.getLastChild());
+
+        Element creator = doc.createElement("creator");
+        creator.insertBefore(doc.createTextNode(item.creator), creator.getLastChild());
+        toolElement.insertBefore(creator, toolElement.getLastChild());
+
+        Element img = doc.createElement("img");
+        img.insertBefore(doc.createTextNode(item.img != null ? item.img : ""), img.getLastChild());
+        toolElement.insertBefore(img, toolElement.getLastChild());
+
+        Transformer tf =
+                TransformerFactory.newInstance().newTransformer();
+        tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        tf.setOutputProperty(OutputKeys.INDENT, "yes");
+        Writer out = new StringWriter();
+        tf.transform(new DOMSource(doc), new StreamResult(out));
+
+        if (dataSourceService.validate(out.toString())) {
+            tf.transform(new DOMSource(doc), new StreamResult(out));
+            StreamResult file = new StreamResult(xmlFile);
+            //write data
+            tf.transform(new DOMSource(doc), file);
+            return "Validation success";
+        }
+        return "Validation failed";
+    }
+
+    @GetMapping("/item/add")
+    public String addItem() {
+
+        //Read file content into the string with - Files.lines(Path path, Charset cs)
+        StringBuilder contentBuilder = new StringBuilder();
+
+        try (
+                Stream<String> stream = Files.lines(Paths.get("src/main/resources/static/addItem.html"), StandardCharsets.UTF_8)) {
+            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return contentBuilder.toString();
     }
 }

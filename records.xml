@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <tools_list>
     <tool>
         <name>Youtube</name>
@@ -247,6 +247,18 @@
         <subjects>Various</subjects>
         <creator>Miro</creator>
     </tool>
+<tool>
+<description>A free email service.</description>
+<link>www.gmail.com</link>
+<style>Learning</style>
+<category>Email Tool</category>
+<web_based>Web-Based</web_based>
+<price>Free</price>
+<subjects>
+<subject>Various</subject>
+</subjects>
+<creator>Google</creator>
+<img/>
+<name>ANDREI!!!!@@@</name>
+</tool>
 </tools_list>
-
-

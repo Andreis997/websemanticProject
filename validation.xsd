@@ -1,0 +1,28 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tools_list" type="tools_listType"/>
+    <xs:complexType name="subjectsType" mixed="true">
+        <xs:sequence>
+            <xs:element type="xs:string" name="subject" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="toolType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="description"/>
+            <xs:element type="xs:string" name="link"/>
+            <xs:element type="xs:string" name="style"/>
+            <xs:element type="xs:string" name="category"/>
+            <xs:element type="xs:string" name="web_based"/>
+            <xs:element type="xs:string" name="price"/>
+            <xs:element type="subjectsType" name="subjects"/>
+            <xs:element type="xs:string" name="creator"/>
+            <xs:element type="xs:string" name="img"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="tools_listType">
+        <xs:sequence>
+            <xs:element type="toolType" name="tool" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

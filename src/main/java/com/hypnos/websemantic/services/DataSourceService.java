@@ -21,14 +21,11 @@ import java.io.File;
 @Service
 public class DataSourceService {
 
-    @Value("${xmlFile}")
-    public static String XML_FILE;
-
-    @Value("${schemaFile}")
-    public static String SCHEMA_FILE;
+    public static String SCHEMA_FILE = "validation.xsd";
 
     public boolean validate(String newXml) {
         SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+
         try {
             Schema schema = schemaFactory.newSchema(new Source[] {
                     new StreamSource(
