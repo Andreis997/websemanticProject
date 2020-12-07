@@ -320,7 +320,7 @@
         <creator>Miro</creator>
         <date>1990-12-07</date>
     </tool>
-<tool>
+<tool id="679">
 <description>A free email service.</description>
 <link>www.gmail.com</link>
 <style>Learning</style>
@@ -333,6 +333,6 @@
 <creator>Google</creator>
 <img/>
 <date>2020-12-07</date>
-<name>Gmailaaaaaaaaa</name>
+<name>Gmail2</name>
 </tool>
 </tools_list>
