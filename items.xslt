@@ -261,7 +261,7 @@
                             </li>
                         </ul>
                         <form class="search" method="get" action="http://localhost:8080/item/specific">
-                            <input type="text" class="searchTerm" name="category" placeholder="Category"></input>
+                            <input type="text" class="searchTerm" name="category" placeholder="Subjects"></input>
                             <button class="searchButton" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>

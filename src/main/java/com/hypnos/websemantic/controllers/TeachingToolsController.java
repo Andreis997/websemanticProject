@@ -30,6 +30,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.util.stream.Stream;
 
 @RestController
@@ -166,9 +167,11 @@ public class TeachingToolsController {
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         Document doc = documentBuilder.parse(xmlFile);
 
+        Random rand = new Random();
         Element root = doc.getDocumentElement();
         Element toolElement = doc.createElement("tool");
         root.appendChild(toolElement);
+        toolElement.setAttribute("id", String.valueOf(rand.nextInt(1000)));
 
         Element name = doc.createElement("name");
         name.insertBefore(doc.createTextNode(item.name), name.getLastChild());
