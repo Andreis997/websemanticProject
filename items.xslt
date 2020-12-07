@@ -7,10 +7,16 @@
                 <title>Top Tools During Covid</title>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
                 <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
                     body {
                     background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
                     font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
                     text-shadow: 0 1px 0 #fff;
+                    }
+
+                    h2 {
+                    font-family: 'Montserrat', sans-serif;
                     }
 
                     strong {
