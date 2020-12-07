@@ -19,10 +19,11 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -35,6 +36,9 @@ public class TeachingToolsController {
 
     @Autowired
     private File itemsXls;
+
+    @Autowired
+    private File itemXls;
 
     @Autowired
     private DataSourceService dataSourceService;
@@ -64,9 +68,38 @@ public class TeachingToolsController {
         return "";
     }
 
-    @GetMapping("/item/")
-    public String showItem(@RequestParam String id) {
-        return "";
+    @GetMapping("/item/{id}")
+    public String showItem(@PathVariable String id) throws IOException, SAXException, ParserConfigurationException, XPathExpressionException, TransformerException, XPathExpressionException {
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        String expression = "//tool[@id=" + "\"" + id + "\"" + "]";
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(xmlFile);
+        Node node = (Node) xPath.compile(expression).evaluate(document, XPathConstants.NODE);
+
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        StreamSource stylesource = new StreamSource(itemXls);
+        Transformer transformer = tFactory.newTransformer(stylesource);
+
+        DocumentBuilderFactory dbf =
+                DocumentBuilderFactory.newInstance();
+        DocumentBuilder builderr = dbf.newDocumentBuilder();
+        Document doc = builderr.newDocument();
+        doc.appendChild(doc.adoptNode(node.cloneNode(true)));
+
+        Transformer tf =
+                TransformerFactory.newInstance().newTransformer();
+        tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        tf.setOutputProperty(OutputKeys.INDENT, "yes");
+        Writer out = new StringWriter();
+        tf.transform(new DOMSource(doc), new StreamResult(out));
+
+        DOMSource source = new DOMSource(doc);
+        StringWriter w = new StringWriter();
+        StreamResult result = new StreamResult(w);
+        transformer.transform(source, result);
+        w.flush();
+        return w.toString();
     }
 
     @PostMapping("/item/add")
