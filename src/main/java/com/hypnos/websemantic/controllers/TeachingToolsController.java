@@ -4,12 +4,12 @@ import com.hypnos.websemantic.models.Item;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class TeachingToolsController {
 
     @GetMapping("/list")
     public String listItems() {
-        return "";
+        return "Test!";
     }
 
     public String listSpecificItems(

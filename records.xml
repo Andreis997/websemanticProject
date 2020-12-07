@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<tools_list>
+    <tool>
+        <name>Youtube</name>
+        <description>An online video-sharing platform.</description>
+        <link>www.youtube.com</link>
+        <style>Learning/Teaching</style>
+        <category>Web Resource</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>
+            <subject>Various</subject>
+        </subjects>
+        <creator>Google</creator>
+        <img>href://url/img</img>
+    </tool>
+    <tool>
+        <name>Gmail</name>
+        <description>A free email service.</description>
+        <link>www.gmail.com</link>
+        <style>Learning</style>
+        <category>Email Tool</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Google</creator>
+    </tool>
+    <tool>
+        <name>Zoom</name>
+        <description>A modern cloud platform for video and audio conferencing and chat</description>
+        <link>https://zoom.us/</link>
+        <style>Teaching</style>
+        <category>Video Meeting Platform</category>
+        <web_based>Not Web-Based</web_based>
+        <price>Freemium</price>
+        <subjects>Various</subjects>
+        <creator>Zoom Video Communications</creator>
+    </tool>
+    <tool>
+        <name>Microsoft Teams</name>
+        <description>A hub for team collaboration in Microsoft 365</description>
+        <link>https://www.microsoft.com/en-ca/microsoft-365/microsoft-teams</link>
+        <style>Teaching</style>
+        <category>Collaboration Platform</category>
+        <web_based>Not Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Microsoft</creator>
+    </tool>
+    <tool>
+        <name>Office 365</name>
+        <description>Free online versions of Microsoft Word, Powerpoint, Excel and OneNote</description>
+        <link>www.office.com</link>
+        <style>Learning</style>
+        <category>Office Suite</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Microsoft</creator>
+    </tool>
+    <tool>
+        <name>Slack</name>
+        <description>Chat rooms for any professional environment</description>
+        <link>www.slack.com</link>
+        <style>Teaching</style>
+        <category>Collaboration Platform</category>
+        <web_based>Web-Based</web_based>
+        <price>Freemium</price>
+        <subjects>Various</subjects>
+        <creator>Slack Corporation</creator>
+    </tool>
+    <tool>
+        <name>Adobe Spark</name>
+        <description>A suite of media creation applications to turn ideas into stories</description>
+        <link>spark.adobe.com</link>
+        <style>Teaching</style>
+        <category>Content Development</category>
+        <web_based>Not Web-Based</web_based>
+        <price>$9.99/m or $99.9/y</price>
+        <subjects>Various</subjects>
+        <creator>Adobe</creator>
+    </tool>
+    <tool>
+        <name>Kahoot!</name>
+        <description>A multiple choice quiz platform for quick tests and fun</description>
+        <link>kahoot.com</link>
+        <style>Learning</style>
+        <category>Live Engagement</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Kahoot</creator>
+    </tool>
+    <tool>
+        <name>Google Search</name>
+        <description>The internet's go-to method of searching for information</description>
+        <link>google.con</link>
+        <style>Learning</style>
+        <category>Search Engine</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Google</creator>
+    </tool>
+    <tool>
+        <name>Trello</name>
+        <description>A hub for teams to work together on tasks</description>
+        <link>google.con</link>
+        <style>Learning</style>
+        <category>Collaboration Platform</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Atlassian</creator>
+    </tool>
+    <tool>
+        <name>Whatsapp</name>
+        <description>The most popular internet messaging service</description>
+        <link>whatsapp.com</link>
+        <style>Learning</style>
+        <category>Search Engine</category>
+        <web_based>Not Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Whatsapp</creator>
+    </tool>
+    <tool>
+        <name>Wikipedia</name>
+        <description>The internet's free encyclopedia</description>
+        <link>whatsapp.com</link>
+        <style>Learning</style>
+        <category>Web resource</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Wikimedia Foundation</creator>
+    </tool>
+    <tool>
+        <name>Google Meet</name>
+        <description>The new Google Hangouts for video conferencing</description>
+        <link>meet.google.com</link>
+        <style>Teaching</style>
+        <category>Video Meeting Platform</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Wikimedia Foundation</creator>
+    </tool>
+    <tool>
+        <name>TED Talks</name>
+        <description>Educational videos on various topics</description>
+        <link>www.ted.com</link>
+        <style>Learning</style>
+        <category>Video Resource</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>TED Conferences LLC</creator>
+    </tool>
+    <tool>
+        <name>Pinterest</name>
+        <description>An image sharing platform for various curational purposes</description>
+        <link>pinterest.com</link>
+        <style>Learning</style>
+        <category>Social Media Platform</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Pinterest</creator>
+    </tool>
+    <tool>
+        <name>Google Classroom</name>
+        <description>A web service to facilitate file sharing between teachers and students</description>
+        <link>classroom.google.com</link>
+        <style>Teaching</style>
+        <category>Learning Platform</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Google</creator>
+    </tool>
+    <tool>
+        <name>Discord</name>
+        <description>Voice call platform with slack-like features</description>
+        <link>discord.com</link>
+        <style>Learning</style>
+        <category>Social Media Platform</category>
+        <web_based>Not Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Discord</creator>
+    </tool>
+    <tool>
+        <name>Google Cloud Services</name>
+        <description>Services that include Google's tools that can be accessed with in-cloud storage, but we're focusing
+            on Google's Office-like services, namely Google docs, sheets, slides, etc
+        </description>
+        <link>https://about.google/products/#all-products</link>
+        <style>Learning</style>
+        <category>Office Suite</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Google</creator>
+    </tool>
+    <tool>
+        <name>Moodle</name>
+        <description>Open source learning management system</description>
+        <link>moodle.org</link>
+        <style>Learning</style>
+        <category>Learning Platform</category>
+        <web_based>Not Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Moodle HQ</creator>
+    </tool>
+    <tool>
+        <name>Mentimeter</name>
+        <description>Create presentations with real-time feedback</description>
+        <link>mentimeter.com</link>
+        <style>Learning</style>
+        <category>Presentations</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Johnny Warstrom</creator>
+    </tool>
+    <tool>
+        <name>Khan Academy</name>
+        <description>A collection of short lessons in video format</description>
+        <link>khanacademy.org</link>
+        <style>Learning</style>
+        <category>Online Course Platform</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Sal Khan</creator>
+    </tool>
+    <tool>
+        <name>Miro</name>
+        <description>Visual Collaboration online tool</description>
+        <link>miro.com</link>
+        <style>Learning</style>
+        <category>collaboration</category>
+        <web_based>Web-Based</web_based>
+        <price>Free</price>
+        <subjects>Various</subjects>
+        <creator>Miro</creator>
+    </tool>
+</tools_list>
+
+
