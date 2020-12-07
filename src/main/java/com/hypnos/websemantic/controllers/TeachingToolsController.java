@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -61,11 +62,49 @@ public class TeachingToolsController {
         return w.toString();
     }
 
+    @GetMapping(value = "item/specific")
     public String listSpecificItems(
             @RequestParam(value = "xDays", defaultValue = "0", required = false) Integer xDays,
-            @RequestParam(value = "category", defaultValue = "", required = false) String category
-    ) {
-        return "";
+            @RequestParam(value = "category", required = false) String category
+    ) throws TransformerException, ParserConfigurationException, XPathExpressionException, IOException, SAXException {
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        String expression = null;
+        if ("Engineering".equalsIgnoreCase(category)) {
+            expression = "//tool[subjects/subject=\"Various\"]|//tool[subjects/subject=\"Engineering\"]";
+        } else {
+            expression = "//tool[subjects/subject=\"" + category + "\"]";
+        }
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(xmlFile);
+        NodeList node = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
+
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        StreamSource stylesource = new StreamSource(itemsXls);
+        Transformer transformer = tFactory.newTransformer(stylesource);
+
+        DocumentBuilderFactory dbf =
+                DocumentBuilderFactory.newInstance();
+        DocumentBuilder builderr = dbf.newDocumentBuilder();
+        Document doc = builderr.newDocument();
+        Element element = doc.createElement("tools_list");
+        doc.appendChild(element);
+        for (int i = 0; i < node.getLength(); ++i) {
+            element.insertBefore(doc.adoptNode(node.item(i).cloneNode(true)), element.getLastChild());
+        }
+        Transformer tf =
+                TransformerFactory.newInstance().newTransformer();
+        tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        tf.setOutputProperty(OutputKeys.INDENT, "yes");
+        Writer out = new StringWriter();
+        tf.transform(new DOMSource(doc), new StreamResult(out));
+
+        DOMSource source = new DOMSource(doc);
+        StringWriter w = new StringWriter();
+        StreamResult result = new StreamResult(w);
+        transformer.transform(source, result);
+        w.flush();
+        return w.toString();
     }
 
     @GetMapping("/item/{id}")
@@ -86,13 +125,6 @@ public class TeachingToolsController {
         DocumentBuilder builderr = dbf.newDocumentBuilder();
         Document doc = builderr.newDocument();
         doc.appendChild(doc.adoptNode(node.cloneNode(true)));
-
-        Transformer tf =
-                TransformerFactory.newInstance().newTransformer();
-        tf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-        tf.setOutputProperty(OutputKeys.INDENT, "yes");
-        Writer out = new StringWriter();
-        tf.transform(new DOMSource(doc), new StreamResult(out));
 
         DOMSource source = new DOMSource(doc);
         StringWriter w = new StringWriter();
