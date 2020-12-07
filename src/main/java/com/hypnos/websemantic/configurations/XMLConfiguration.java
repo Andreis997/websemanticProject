@@ -13,6 +13,7 @@ import java.io.File;
 public class XMLConfiguration {
 
     public static String XML_FILE = "records.xml";
+    public static String XLS_LIST = "items.xslt";
 
     @Bean
     public DataSource dataSource() throws JAXBException {
@@ -22,6 +23,16 @@ public class XMLConfiguration {
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
         return (DataSource) jaxbUnmarshaller.unmarshal(new File(XML_FILE));
+    }
+
+    @Bean
+    public File xmlFile() {
+        return new File(XML_FILE);
+    }
+
+    @Bean
+    public File itemsXls() {
+        return new File(XLS_LIST);
     }
 
 }
