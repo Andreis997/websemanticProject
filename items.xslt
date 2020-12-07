@@ -151,12 +151,15 @@
             <body>
                 <h2>Top Tools for Learning and Teaching 2020</h2>
 
-                <form class="search" method="get" action="item/specific">
+                <form class="search" method="get" action="http://localhost:8080/item/specific">
                     <input type="text" class="searchTerm" name="category" placeholder="Category"></input>
                     <button class="searchButton" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
                 </form>
+
+                <a href="http://localhost:8080/item/specific">Enginering Link</a>
+                <a href="http://localhost:8080/item/add">Add item</a>
 
                 <table cellpadding="0" cellspacing="0" border="0">
                     <div class="tbl-header">

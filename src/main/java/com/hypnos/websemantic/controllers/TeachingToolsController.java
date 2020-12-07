@@ -96,7 +96,7 @@ public class TeachingToolsController {
         return w.toString();
     }
 
-    @GetMapping(value = "item/specific")
+    @GetMapping(value = "/item/specific")
     public String listSpecificItems(@RequestParam(value = "category", defaultValue = "Engineering", required = false) String category
     ) throws TransformerException, ParserConfigurationException, XPathExpressionException, IOException, SAXException {
         XPath xPath = XPathFactory.newInstance().newXPath();
