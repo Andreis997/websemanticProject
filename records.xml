@@ -335,4 +335,19 @@
 <date>2020-12-07</date>
 <name>Gmail2</name>
 </tool>
+<tool id="673">
+<description>A free email service.</description>
+<link>www.gmail.com</link>
+<style>Learning</style>
+<category>Email Tool</category>
+<web_based>Web-Based</web_based>
+<price>Free</price>
+<subjects>
+<subject>Various</subject>
+</subjects>
+<creator>Google</creator>
+<img/>
+<date>2020-12-07</date>
+<name>Gmail2</name>
+</tool>
 </tools_list>
