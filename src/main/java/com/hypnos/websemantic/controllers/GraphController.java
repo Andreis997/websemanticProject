@@ -127,6 +127,40 @@ public class GraphController {
         return result.isEmpty() ? "No result" : result;
     }
 
+    @GetMapping("/graph/top/{x}")
+    public String findBasedTopX(@PathVariable(value = "x") int x) {
+        // create an empty model
+        Model model = ModelFactory.createDefaultModel();
+
+        // use the RDFDataMgr to find the input file
+        InputStream in = RDFDataMgr.open("sample.rdf");
+        if (in == null) {
+            throw new IllegalArgumentException(
+                    "File: records2.xml not found");
+        }
+
+        // read the RDF/XML file
+        model.read(in, null);
+
+        String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
+                "SELECT ?s" +
+                "WHERE {?s x:position ?position . FILTER(?position < 11) } " +
+                //"FILTER (?position < " + x + ") " +
+                "LIMIT 100" ;
+        Query query = QueryFactory.create(queryString);
+        String result = "";
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+            ResultSet results = qexec.execSelect() ;
+            for ( ; results.hasNext() ; )
+            {
+                QuerySolution soln = results.nextSolution();
+                result += soln.get("subject").asNode().toString() + "<br>";
+            }
+        }
+
+        return result.isEmpty() ? "No result" : result;
+    }
+
     @PostMapping("/graph/add")
     public String add(@RequestParam(value = "name") String name, @RequestParam(value = "position") Integer position,
                       @RequestParam(value = "category") String category, @RequestParam(value = "web_based") Integer web_based,
