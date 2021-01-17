@@ -94,7 +94,7 @@ public class GraphController {
         return model.getGraph().toString();
     }
 
-    @GetMapping("/graph/find/{name}")
+    @GetMapping("/graph/find/subject/{name}")
     public String findBasedOnSubject(@PathVariable(value = "name") String name) {
         // create an empty model
         Model model = ModelFactory.createDefaultModel();
@@ -112,6 +112,39 @@ public class GraphController {
         String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
                 "SELECT ?subject ?predicate ?object " +
                 "WHERE {?subject x:subject \"" + name + "\"} " +
+                "LIMIT 100" ;
+        Query query = QueryFactory.create(queryString);
+        String result = "";
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+            ResultSet results = qexec.execSelect() ;
+            for ( ; results.hasNext() ; )
+            {
+                QuerySolution soln = results.nextSolution();
+                result += soln.get("subject").asNode().toString() + "<br>";
+            }
+        }
+
+        return result.isEmpty() ? "No result" : result;
+    }
+
+    @GetMapping("/graph/find/category/{name}")
+    public String findBasedOnCategory(@PathVariable(value = "name") String name) {
+        // create an empty model
+        Model model = ModelFactory.createDefaultModel();
+
+        // use the RDFDataMgr to find the input file
+        InputStream in = RDFDataMgr.open("sample.rdf");
+        if (in == null) {
+            throw new IllegalArgumentException(
+                    "File: records2.xml not found");
+        }
+
+        // read the RDF/XML file
+        model.read(in, null);
+
+        String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
+                "SELECT ?subject ?predicate ?object " +
+                "WHERE {?subject x:category \"" + name + "\"} " +
                 "LIMIT 100" ;
         Query query = QueryFactory.create(queryString);
         String result = "";
