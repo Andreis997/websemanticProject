@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:x="https://www.toptools4learning.com">
+
+<rdf:Description rdf:about="www.youtube.com">
+        <x:name>Youtube</x:name>
+        <x:position>1</x:position>
+        <x:category>Resource</x:category>
+        <x:web_based>Web-Based</x:web_based>
+        <x:subject>Various</x:subject>
+</rdf:Description>
+
+<rdf:Description rdf:about="wikipedia">
+        <x:name>Wikipedia</x:name>
+        <x:position>11</x:position>
+        <x:category>Resource</x:category>
+        <x:web_based>Web-Based</x:web_based>
+        <x:subject>Various</x:subject>
+</rdf:Description>
+
+<rdf:Description rdf:about="linkedin">
+        <x:name>LinkedIn</x:name>
+        <x:position>8</x:position>
+        <x:category>Social</x:category>
+        <x:web_based>Web-Based</x:web_based>
+        <x:subject>Various</x:subject>
+</rdf:Description>
+
+<rdf:Description rdf:about="twitter">
+        <x:name>Twitter</x:name>
+        <x:position>9</x:position>
+        <x:category>Social</x:category>
+        <x:web_based>Web-Based</x:web_based>
+        <x:subject>Various</x:subject>
+
+</rdf:Description>
+
+<rdf:Description rdf:about="facebook">
+        <x:name>Facebook</x:name>
+        <x:position>12</x:position>
+        <x:category>Social</x:category>
+        <x:web_based>Web-Based</x:web_based>
+        <x:subject>Various</x:subject>
+</rdf:Description>
+
+<rdf:Description rdf:about="autocad">
+        <x:name>AutoCAD</x:name>
+        <x:position>NaN</x:position>
+        <x:category>Social</x:category>
+        <x:web_based>Web-Based</x:web_based>
+        <x:subject>Various</x:subject>
+</rdf:Description>
+
+</rdf:RDF> 

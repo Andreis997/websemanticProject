@@ -3,45 +3,40 @@ package com.hypnos.websemantic.controllers;
 import com.hypnos.websemantic.services.DataSourceService;
 import com.hypnos.websemantic.services.FileService;
 import org.apache.jena.graph.Graph;
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.sparql.graph.GraphFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.IOException;
-import java.io.StringWriter;
+import java.io.InputStream;
 
 @RestController
 public class GraphController {
 
     @Autowired
+    FileService fileService;
+    @Autowired
     private File xmlFile;
-
     @Autowired
     private File itemsXls;
-
     @Autowired
     private File itemXls;
-
     @Autowired
     private DataSourceService dataSourceService;
-
-    @Autowired
-    FileService fileService;
 
     @GetMapping("/graph/uploadFile")
     public String index() {
@@ -65,26 +60,39 @@ public class GraphController {
 
     @PostMapping("/graph/uploadFile")
     public String uploadFile(@RequestParam("file") MultipartFile file) {
-        fileService.uploadFile(file);
-        return "You successfully uploaded " + file.getOriginalFilename() + "!";
+        // create an empty model
+        Model model = ModelFactory.createDefaultModel();
+
+        // use the RDFDataMgr to find the input file
+        InputStream in = RDFDataMgr.open(fileService.uploadFile(file));
+        if (in == null) {
+            throw new IllegalArgumentException(
+                    "File: records2.xml not found");
+        }
+
+        // read the RDF/XML file
+        model.read(in, null);
+
+        return "You successfully uploaded " + file.getOriginalFilename() + "!<br>" + model.getGraph().toString();
     }
 
     @GetMapping("/graph")
     public String listItems() throws ParserConfigurationException, IOException, SAXException, TransformerException {
+        // create an empty model
+        Model model = ModelFactory.createDefaultModel();
 
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(xmlFile);
+        // use the RDFDataMgr to find the input file
+        InputStream in = RDFDataMgr.open("records2.xml");
+        if (in == null) {
+            throw new IllegalArgumentException(
+                    "File: records2.xml not found");
+        }
 
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        StreamSource stylesource = new StreamSource(itemsXls);
-        Transformer transformer = tFactory.newTransformer(stylesource);
+        // read the RDF/XML file
+        model.read(in, null);
 
-        DOMSource source = new DOMSource(document);
-        StringWriter w = new StringWriter();
-        StreamResult result = new StreamResult(w);
-        transformer.transform(source, result);
-        w.flush();
-        return w.toString();
+        // write it to standard out
+        model.write(System.out);
+        return "";
     }
 }
