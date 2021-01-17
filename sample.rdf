@@ -2,7 +2,7 @@
 
 <rdf:RDF
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-xmlns:x="https://www.toptools4learning.com">
+xmlns:x="https://www.toptools4learning.com#">
 
 <rdf:Description rdf:about="www.youtube.com">
         <x:name>Youtube</x:name>
@@ -50,7 +50,7 @@ xmlns:x="https://www.toptools4learning.com">
         <x:position>NaN</x:position>
         <x:category>Social</x:category>
         <x:web_based>Web-Based</x:web_based>
-        <x:subject>Various</x:subject>
+        <x:subject>Engineering</x:subject>
 </rdf:Description>
 
 </rdf:RDF> 

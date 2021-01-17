@@ -2,19 +2,19 @@ package com.hypnos.websemantic.controllers;
 
 import com.hypnos.websemantic.services.DataSourceService;
 import com.hypnos.websemantic.services.FileService;
+import jdk.nashorn.internal.ir.BaseNode;
 import org.apache.jena.graph.Graph;
+import org.apache.jena.graph.Node;
+import org.apache.jena.graph.Triple;
 import org.apache.jena.query.*;
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.rdf.model.impl.ModelCom;
+import org.apache.jena.rdf.model.impl.StatementImpl;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.sparql.graph.GraphFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.xml.sax.SAXException;
 
@@ -77,12 +77,12 @@ public class GraphController {
     }
 
     @GetMapping("/graph")
-    public String listItems() throws ParserConfigurationException, IOException, SAXException, TransformerException {
+    public String listItems() {
         // create an empty model
         Model model = ModelFactory.createDefaultModel();
 
         // use the RDFDataMgr to find the input file
-        InputStream in = RDFDataMgr.open("records2.xml");
+        InputStream in = RDFDataMgr.open("sample.rdf");
         if (in == null) {
             throw new IllegalArgumentException(
                     "File: records2.xml not found");
@@ -91,8 +91,59 @@ public class GraphController {
         // read the RDF/XML file
         model.read(in, null);
 
-        // write it to standard out
-        model.write(System.out);
-        return "";
+        return model.getGraph().toString();
+    }
+
+    @GetMapping("/graph/find/{name}")
+    public String findBasedOnSubject(@PathVariable(value = "name") String name) {
+        // create an empty model
+        Model model = ModelFactory.createDefaultModel();
+
+        // use the RDFDataMgr to find the input file
+        InputStream in = RDFDataMgr.open("sample.rdf");
+        if (in == null) {
+            throw new IllegalArgumentException(
+                    "File: records2.xml not found");
+        }
+
+        // read the RDF/XML file
+        model.read(in, null);
+
+        String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
+                "SELECT ?subject ?predicate ?object " +
+                "WHERE {?subject x:subject \"" + name + "\"} " +
+                "LIMIT 100" ;
+        Query query = QueryFactory.create(queryString);
+        String result = "";
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+            ResultSet results = qexec.execSelect() ;
+            for ( ; results.hasNext() ; )
+            {
+                QuerySolution soln = results.nextSolution();
+                result += soln.get("subject").asNode().toString() + "<br>";
+            }
+        }
+
+        return result.isEmpty() ? "No result" : result;
+    }
+
+    @PostMapping("/graph/add")
+    public String add(@RequestParam(value = "name") String name, @RequestParam(value = "position") Integer position,
+                      @RequestParam(value = "category") String category, @RequestParam(value = "web_based") Integer web_based,
+                      @RequestParam(value = "subject") String subject) {
+        // create an empty model
+        Model model = ModelFactory.createDefaultModel();
+
+        // use the RDFDataMgr to find the input file
+        InputStream in = RDFDataMgr.open("sample.rdf");
+        if (in == null) {
+            throw new IllegalArgumentException(
+                    "File: records2.xml not found");
+        }
+
+        // read the RDF/XML file
+        model.read(in, null);
+
+        return model.getGraph().toString();
     }
 }
