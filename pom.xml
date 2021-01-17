@@ -53,6 +53,22 @@
 			<artifactId>jackson-dataformat-xml</artifactId>
 			<version>2.9.6</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<type>pom</type>
+			<version>3.17.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jung</groupId>
+			<artifactId>jung-3d</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hypnos</groupId>
+			<artifactId>websemantic</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -66,6 +82,10 @@
 
 	<repositories>
 		<repository>
+			<id>apache</id>
+			<name>apache</name>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
+		</repository><repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
