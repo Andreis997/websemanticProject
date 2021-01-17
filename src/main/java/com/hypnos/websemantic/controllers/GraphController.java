@@ -176,8 +176,9 @@ public class GraphController {
         model.read(in, null);
 
         String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
-                "SELECT ?s" +
-                "WHERE {?s x:position ?position . FILTER(?position < 11) } " +
+                "SELECT ?s ?position" +
+                "WHERE {?s x:position ?position . FILTER(?position < 11)} " +
+                //"WHERE {?s x:position ?position . FILTER(?position < 11) } " +
                 //"FILTER (?position < " + x + ") " +
                 "LIMIT 100" ;
         Query query = QueryFactory.create(queryString);
