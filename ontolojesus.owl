@@ -1,0 +1,611 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#belongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#defines -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#defines">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#isA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#isA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#positionedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#positionedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#uses -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#uses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasCategory">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasDescription"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasPosition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasSubjects -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasSubjects">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasDescription"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasToolType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasToolType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasUserType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#hasUserType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#isWebBased -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#isWebBased">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Chemistry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Chemistry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Collab -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Collab">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Economics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Economics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Email -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Email">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Engagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Engagement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Engineering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Engineering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Free -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Free">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Price"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Freemium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Freemium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Price"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Hub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Hub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#LearningTool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#LearningTool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Tool"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#TeachingTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Life_Sciences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Life_Sciences">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#NotWebBased -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#NotWebBased">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBasis"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBased"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#OfficeSuite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#OfficeSuite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Other -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Other">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Paid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Paid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Price"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Physics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Physics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Presentations -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Presentations">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ValuePartition"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBasis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Resources -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Resources">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#User"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Teacher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Teacher">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#TeachingTool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#TeachingTool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Thing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Thing">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Tool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Tool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ValuePartition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Various -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Various">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBased -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBased">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBasis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBasis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBasis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#LinkedIn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#LinkedIn">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Collab"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Freemium"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#TeachingTool"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Student"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Teacher"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Wikipedia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Wikipedia">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#WebBased"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#LearningTool"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Resources"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Student"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Various"/>
+            </owl:Restriction>
+        </rdf:type>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Youtube"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Youtube -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Youtube">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Resources"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#classifiedAs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#TeachingTool"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Student"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Teacher"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#usedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Various"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Chemistry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Economics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Engineering"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Life_Sciences"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Other"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Physics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Various"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Collab"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Email"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Engagement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Hub"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#OfficeSuite"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Presentations"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Resources"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Free"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Freemium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Paid"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Subjects"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#Tool"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#ToolCategory"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/david/ontologies/2021/0/untitled-ontology-6#User"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
