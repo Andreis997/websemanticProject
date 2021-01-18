@@ -1,5 +1,9 @@
 package com.hypnos.websemantic.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
 import com.hypnos.websemantic.services.DataSourceService;
 import com.hypnos.websemantic.services.FileService;
 import jdk.nashorn.internal.ir.BaseNode;
@@ -73,11 +77,11 @@ public class GraphController {
         // read the RDF/XML file
         model.read(in, null);
 
-        return "You successfully uploaded " + file.getOriginalFilename() + "!<br>" + model.getGraph().toString();
+        return "You successfully uploaded " + file.getOriginalFilename() + "!<br>" + model.getGraph().toString().replace(";", ";<br>");
     }
 
     @GetMapping("/graph")
-    public String listItems() {
+    public String listItems() throws JsonProcessingException {
         // create an empty model
         Model model = ModelFactory.createDefaultModel();
 
@@ -90,8 +94,7 @@ public class GraphController {
 
         // read the RDF/XML file
         model.read(in, null);
-
-        return model.getGraph().toString();
+        return model.getGraph().toString().replace(";", ";<br>");
     }
 
     @GetMapping("/graph/find/subject/{name}")
@@ -110,7 +113,7 @@ public class GraphController {
         model.read(in, null);
 
         String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
-                "SELECT ?subject ?predicate ?object " +
+                "SELECT * " +
                 "WHERE {?subject x:subject \"" + name + "\"} " +
                 "LIMIT 100" ;
         Query query = QueryFactory.create(queryString);
@@ -176,8 +179,8 @@ public class GraphController {
         model.read(in, null);
 
         String queryString = "PREFIX x: <https://www.toptools4learning.com#> " +
-                "SELECT ?s ?position" +
-                "WHERE {?s x:position ?position . FILTER(?position < 11)} " +
+                "SELECT ?s ?x:position" +
+                "WHERE {?s x:position ?x:position . FILTER(?x:position < 11)} " +
                 //"WHERE {?s x:position ?position . FILTER(?position < 11) } " +
                 //"FILTER (?position < " + x + ") " +
                 "LIMIT 100" ;
